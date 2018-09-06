@@ -423,7 +423,7 @@
       .on(
         'change.daterangepicker',
         'select.hourselect,select.minuteselect,select.secondselect,select.ampmselect',
-        $.proxy(this.timeChanged, this),
+        $.proxy(this.timeChanged, this)
       );
 
     this.container
@@ -466,7 +466,7 @@
 
       if (this.timePicker && this.timePickerIncrement)
         this.startDate.minute(
-          Math.round(this.startDate.minute() / this.timePickerIncrement) * this.timePickerIncrement,
+          Math.round(this.startDate.minute() / this.timePickerIncrement) * this.timePickerIncrement
         );
 
       if (this.minDate && this.startDate.isBefore(this.minDate)) {
@@ -474,7 +474,7 @@
         if (this.timePicker && this.timePickerIncrement)
           this.startDate.minute(
             Math.round(this.startDate.minute() / this.timePickerIncrement) *
-              this.timePickerIncrement,
+              this.timePickerIncrement
           );
       }
 
@@ -483,7 +483,7 @@
         if (this.timePicker && this.timePickerIncrement)
           this.startDate.minute(
             Math.floor(this.startDate.minute() / this.timePickerIncrement) *
-              this.timePickerIncrement,
+              this.timePickerIncrement
           );
       }
 
@@ -505,7 +505,7 @@
 
       if (this.timePicker && this.timePickerIncrement)
         this.endDate.minute(
-          Math.round(this.endDate.minute() / this.timePickerIncrement) * this.timePickerIncrement,
+          Math.round(this.endDate.minute() / this.timePickerIncrement) * this.timePickerIncrement
         );
 
       if (this.endDate.isBefore(this.startDate)) this.endDate = this.startDate.clone();
@@ -528,7 +528,7 @@
         .html(
           this.startDate.format(this.locale.format) +
             this.locale.separator +
-            this.endDate.format(this.locale.format),
+            this.endDate.format(this.locale.format)
         );
 
       if (!this.isShowing) this.updateElement();
@@ -566,7 +566,7 @@
           .html(
             this.startDate.format(this.locale.format) +
               this.locale.separator +
-              this.endDate.format(this.locale.format),
+              this.endDate.format(this.locale.format)
           );
       this.updateMonthsInView();
       this.updateCalendars();
@@ -1022,10 +1022,10 @@
         if (timeSelector.html() != '') {
           selected.hour(selected.hour() || timeSelector.find('.hourselect option:selected').val());
           selected.minute(
-            selected.minute() || timeSelector.find('.minuteselect option:selected').val(),
+            selected.minute() || timeSelector.find('.minuteselect option:selected').val()
           );
           selected.second(
-            selected.second() || timeSelector.find('.secondselect option:selected').val(),
+            selected.second() || timeSelector.find('.secondselect option:selected').val()
           );
 
           if (!this.timePicker24Hour) {
@@ -1282,7 +1282,7 @@
         'resize.daterangepicker',
         $.proxy(function(e) {
           this.move(e);
-        }, this),
+        }, this)
       );
 
       this.oldStartDate = this.startDate.clone();

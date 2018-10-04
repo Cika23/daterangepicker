@@ -61,7 +61,7 @@
     this.alwaysShowCalendars = false;
     this.ranges = {};
     this.pickedRange = 'day';
-    this.rangeValue = 0;
+    this.rangeValue = -1;
 
     this.opens = 'right';
     if (this.element.hasClass('pull-right')) this.opens = 'left';
@@ -916,14 +916,14 @@
 
           rangeValueNumber = this.rangeValue;
           //highlight dates in-between the selected dates
-          if (this.pickedRange == 'week' && this.rangeValue === 0) {
+          if (this.pickedRange == 'week' && this.rangeValue === -1) {
             if (
               this.endDate != null &&
               calendar[row][col] > this.startDate.startOf('isoWeek') &&
               calendar[row][col] < this.endDate.endOf('isoWeek')
             )
               classes.push('in-range');
-          } else if (this.pickedRange == 'week' && this.rangeValue !== 0) {
+          } else if (this.pickedRange == 'week' && this.rangeValue !== -1) {
             this.endDate = this.startDate
               .clone()
               .add(rangeValueNumber, 'week')
@@ -934,14 +934,14 @@
               calendar[row][col] < this.endDate
             )
               classes.push('in-range');
-          } else if (this.pickedRange == 'month' && this.rangeValue === 0) {
+          } else if (this.pickedRange == 'month' && this.rangeValue === -1) {
             if (
               this.endDate != null &&
               calendar[row][col] > this.startDate.startOf('month') &&
               calendar[row][col] < this.endDate.endOf('month')
             )
               classes.push('in-range');
-          } else if (this.pickedRange == 'month' && this.rangeValue !== 0) {
+          } else if (this.pickedRange == 'month' && this.rangeValue !== -1) {
             this.endDate = this.startDate
               .clone()
               .add(rangeValueNumber, 'month')
